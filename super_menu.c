@@ -5,22 +5,31 @@ int opcao;
         printf("\n---SUPER MENU DE FERRAMENTAS---\n");
         printf("\n1 - Calcule uma media aritmetica:\n");
         printf("\n2 - Conversor de medidas: \n");
+        printf("\n3 - Calculadora de IMC (indice de massa corporal)\n");
         printf("\n0 - Sair do programa\n");
         printf("\nEscolha uma opcao:\n");
         scanf("%d", &opcao);
 
-        switch (opcao) {
+        switch (opcao) {  
             case 1: {
             printf("\nIniciando calculadora de media aritmetica:\n");
+            int continuar = 1;
             float n1, n2, media;
+            while (continuar == 1){ //implantado loop na calculadora de media
             printf("\nDigite a nota 1:\n");
             scanf("%f", &n1);
             printf("\nDigite a nota 2:\n");
             scanf("%f", &n2);
             media = (n1 + n2) / 2;
             printf("\nSua media sera: %.2f", media);
-            break;
+            
+
+            printf("\nDeseja calcular outra media aritmetica? (1-sim/0-sair)\n");
+            scanf("%d", &continuar);
             }
+            break;
+
+            }  
             case 2: {
             printf("\nIniciando o conversor de medidas:\n");
             int escolha;
@@ -57,6 +66,35 @@ int opcao;
             scanf("%d", &continuar);
             break;
 
+            case 3: {
+            while (continuar == 1); // implantada a calculadora de IMC no super menu   
+                printf("\nIniciando a Calculadora de IMC - indice de massa corporal\n");
+                float peso, altura;
+                printf("\nDigite aqui seu peso em kg:\n");
+                scanf("%f", &peso);
+                printf("\nDigite aqui sua altura em metros:\n");
+                scanf("%f", &altura);
+                float imc;
+                imc = peso / (altura * altura);
+                printf("Seu imc sera %.2f", imc);
+
+                if (imc < 18.5) {
+                    printf("\nClassificacao: abaixo do peso\n");
+                }
+                else if (imc > 18.5 && imc < 25) {
+                    printf("\nClassificacao: peso normal\n"); 
+                }
+                else if (imc > 25 && imc < 30) {
+                    printf("\nClassificacao: sobrepeso\n");
+                }
+                else {
+                    printf("\nClassificacao: obesidade\n");
+                }
+            printf("\nDeseja calcular novamente o IMC? (1-sim/0-sair)\n");
+            scanf("%d", &continuar);
+
+            printf("\nObrigado por utilizar nossa calculadora de IMC!\n");
+            }
             case 0: {
                 printf("\nSistema encerrado!\n");
                 break;
