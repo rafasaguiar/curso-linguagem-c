@@ -6,6 +6,7 @@ int opcao;
         printf("\n1 - Calcule uma media aritmetica:\n");
         printf("\n2 - Conversor de medidas: \n");
         printf("\n3 - Calculadora de IMC (indice de massa corporal)\n");
+        printf("\n4 - Verificador de numero par ou impar\n");
         printf("\n0 - Sair do programa\n");
         printf("\nEscolha uma opcao:\n");
         scanf("%d", &opcao);
@@ -95,6 +96,30 @@ int opcao;
 
             printf("\nObrigado por utilizar nossa calculadora de IMC!\n");
             }
+            break;
+
+            case 4: {
+                printf("\nIniciando a verificacao de numeros pares e impares\n"); //adicionado verificador de impar e par
+                int numero;
+                int continuar = 1;
+
+                while (continuar == 1) {
+                    printf("\nDigite qualquer numero inteiro da sua preferencia aqui:\n");
+                    scanf("%d", &numero);
+
+                    if (numero % 2 == 0) {
+                        printf("\nO numero %d e par!\n", numero);
+                    }
+                    else {
+                        printf("\nO numero %d e impar!\n", numero);
+                    }
+
+                    printf("\nDeseja verificar outro numero? 1-sim/0-voltar:");
+                    scanf("%d", &continuar);
+                }
+                break;
+            }
+
             case 0: {
                 printf("\nSistema encerrado!\n");
                 break;
