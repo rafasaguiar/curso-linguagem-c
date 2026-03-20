@@ -7,6 +7,7 @@ int opcao;
         printf("\n2 - Conversor de medidas: \n");
         printf("\n3 - Calculadora de IMC (indice de massa corporal)\n");
         printf("\n4 - Verificador de numero par ou impar\n");
+        printf("\n5 - Calculadora de media ponderada\n");
         printf("\n0 - Sair do programa\n");
         printf("\nEscolha uma opcao:\n");
         scanf("%d", &opcao);
@@ -116,6 +117,30 @@ int opcao;
 
                     printf("\nDeseja verificar outro numero? 1-sim/0-voltar:");
                     scanf("%d", &continuar);
+                }
+                break;
+            }
+            case 5: {
+                printf("\nIniciando a calculadora de media ponderada\n"); //adcionada calculadora de media ponderada - com pesos
+                float n1, n2, media;
+                int peso1, peso2;
+                int continuar = 1;
+
+                while (continuar == 1) {
+                    printf("\nDigite a primeira nota:\n");
+                    scanf("%f", &n1);
+                    printf("\nDigite o peso da primeira nota:\n");
+                    scanf("%d", &peso1);
+                    printf("\nDigite a segunda nota:\n");
+                    scanf("%f", &n2);
+                    printf("\nDigite o peso da segunda nota:\n");
+                    scanf("%d", &peso2);
+                    media = ((n1 * peso1) + (n2 * peso2)) / (peso1 + peso2);
+                    printf("\nSua media ponderada sera %.2f", media);
+
+                    printf("\nDeseja calcular outra media ponderada? (1-sim/0-nao)\n");
+                    scanf("%d",&continuar);
+                
                 }
                 break;
             }
